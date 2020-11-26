@@ -14984,7 +14984,7 @@
     </gui>
     <model name='my_ball'>
       <link name='link_0'>
-        <pose frame=''>-0 -0 0 0 -0 0</pose>
+        <pose frame=''>-0 3 0 0 -0 0</pose>
         <inertial>
           <mass>1</mass>
           <inertia>
