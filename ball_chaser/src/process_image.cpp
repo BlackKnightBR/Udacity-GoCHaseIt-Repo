@@ -23,8 +23,8 @@ void drive_robot(float lin_x, float ang_z){
 void process_image_callback(const sensor_msgs::Image img){
 
     int white_pixel = 255;
-    int left_bound = int(img.width / 3);
-    int right_bound = 2 * int(img.width / 3);
+    int left_bound = int(img.step / 3);
+    int right_bound = 2 * int(img.step / 3);
     int right_count = 0; int mid_count = 0; int left_count = 0;
     int max_count = 0;
 
@@ -44,7 +44,7 @@ void process_image_callback(const sensor_msgs::Image img){
             }
         }
     }
-    std::count << "esquerda: " << left_count << " ; frente: " << mid_count << " ; direita: " << right_count << std::endl;
+    std::cout << "esquerda: " << left_count << " ; frente: " << mid_count << " ; direita: " << right_count << std::endl;
 
     max_count = std::max(std::max(left_count, mid_count), right_count);
     if (max_count == 0){
